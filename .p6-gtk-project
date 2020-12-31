@@ -1,0 +1,3 @@
+prefix=GSSDP
+modules=GSSDP::Raw::Types
+backups=backup,google-backup,azure-backup
