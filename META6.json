@@ -1,0 +1,35 @@
+{
+    "depends": [
+        "p6-GIO"
+    ],
+    "description": "Perl6 library bindings for Gnome's GSSDP library",
+    "version": "r0.1",
+    "meta-version": "0",
+    "license": "GPL-3.0",
+    "source-url": "https://github.com/Xliff/p6-GSSDP",
+    "provides": {
+      "GSSDP::Raw::Definitions"                :  "lib/GSSDP/Raw/Definitions.pm6"               ,
+      "GSSDP::Raw::Client"                     :  "lib/GSSDP/Raw/Client.pm6"                    ,
+      "GSSDP::Raw::ResourceBrowser"            :  "lib/GSSDP/Raw/ResourceBrowser.pm6"           ,
+      "GSSDP::Raw::ResourceGroup"              :  "lib/GSSDP/Raw/ResourceGroup.pm6"             ,
+      "GSSDP::Raw::Exports"                    :  "lib/GSSDP/Raw/Exports.pm6"                   ,
+      "GSSDP::Raw::Types"                      :  "lib/GSSDP/Raw/Types.pm6"                     ,
+      "GSSDP::ResourceGroup"                   :  "lib/GSSDP/ResourceGroup.pm6"                 ,
+      "GSSDP::Roles::Signals::Client"          :  "lib/GSSDP/Roles/Signals/Client.pm6"          ,
+      "GSSDP::Roles::Signals::ResourceBrowser" :  "lib/GSSDP/Roles/Signals/ResourceBrowser.pm6" ,
+      "GSSDP::Client"                          :  "lib/GSSDP/Client.pm6"                        ,
+      "GSSDP::ResourceBrowser"                 :  "lib/GSSDP/ResourceBrowser.pm6"               
+    },
+    "name": "p6-GSSDP",
+    "perl": "6.c",
+    "test-depends": ["Test::META"],
+    "build-depends": [
+        "Text::Table::Simple",
+        "Dependency::Sort",
+        "Color",
+        "RandomColor",
+        "File::Find"
+    ],
+    "support": {"source": null},
+    "authors": ["clifton.wood@gmail.com"]
+}
