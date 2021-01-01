@@ -15,7 +15,7 @@ our subset GSSDPResourceGroupAncestry is export of Mu
 class GSSDP::ResourceGroup {
   also does GLib::Roles::Object;
 
-  has GSSDPResourceGroup $!rg;
+  has GSSDPResourceGroup $!rg is implementor;
 
   submethod BUILD (:$group) {
     self.setGSSDPResourceGroup($group) if $group;

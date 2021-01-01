@@ -13,6 +13,7 @@ use GIO::InetAddress;
 use GIO::InetAddressMask;
 
 use GLib::Roles::Object;
+use GLib::Roles::Initiable;
 use GSSDP::Roles::Signals::Client;
 
 our subset GSSDPClientAncestry is export of Mu
@@ -20,9 +21,10 @@ our subset GSSDPClientAncestry is export of Mu
 
 class GSSDP::Client {
   also does GLib::Roles::Object;
+  also does GLib::Roles::Initable;
   also does GSSDP::Roles::Signals::Client;
 
-  has GSSDPClient $!c;
+  has GSSDPClient $!c is implementor;
 
   submethod BUILD (:$client) {
     self.setGSSDPClient($client) if $client;

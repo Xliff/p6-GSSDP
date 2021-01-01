@@ -18,7 +18,7 @@ class GSSDP::ResourceBrowser {
   also does GLib::Roles::Object;
   also does GSSDP::Roles::Signals::ResourceBrowser;
 
-  has GSSDPResourceBrowser $!rb;
+  has GSSDPResourceBrowser $!rb is implementor;
 
   submethod BUILD(:$browser) {
     self.setGSSDPResourceBrowser($browser) if $browser;
