@@ -1,5 +1,7 @@
 use v6.c;
 
+use Method::Also;
+
 use GSSDP::Raw::Types;
 use GSSDP::Raw::ResourceBrowser;
 
@@ -40,6 +42,7 @@ class GSSDP::ResourceBrowser {
   }
 
   method GSSDP::Raw::Definitions::GSSDPResourceBrowser
+    is also<GSSDPResourceBrowser>
   { $!rb }
 
   multi method new (GSSDPResourceBrowserAncestry $browser, :$ref = True) {
@@ -131,21 +134,21 @@ class GSSDP::ResourceBrowser {
 
   # Is originally:
   # GSSDPResourceBrowser, gchar, gpointer, gpointer --> void
-  method resource-available {
+  method resource-available is also<resource_available> {
     self.connect-resource-available($!rb);
   }
 
   # Is originally:
   # GSSDPResourceBrowser, gchar, gpointer --> void
-  method resource-unavailable {
+  method resource-unavailable is also<resource_unavailable> {
     self.connect-resource-unavailable($!rb);
   }
 
-  method get_active {
+  method get_active is also<get-active> {
     so gssdp_resource_browser_get_active($!rb);
   }
 
-  method get_client (:$raw = False) {
+  method get_client (:$raw = False) is also<get-client> {
     my $c = gssdp_resource_browser_get_client($!rb);
 
     $c ??
@@ -154,11 +157,11 @@ class GSSDP::ResourceBrowser {
       Nil;
   }
 
-  method get_mx {
+  method get_mx is also<get-mx> {
     gssdp_resource_browser_get_mx($!rb);
   }
 
-  method get_target {
+  method get_target is also<get-target> {
     gssdp_resource_browser_get_target($!rb);
   }
 
@@ -166,19 +169,19 @@ class GSSDP::ResourceBrowser {
     gssdp_resource_browser_rescan($!rb);
   }
 
-  method set_active (Int() $active) {
+  method set_active (Int() $active) is also<set-active> {
     my gboolean $a = $active.so.Int;
 
     gssdp_resource_browser_set_active($!rb, $a);
   }
 
-  method set_mx (Int() $mx) {
+  method set_mx (Int() $mx) is also<set-mx> {
     my gushort $mmx = $mx;
 
     gssdp_resource_browser_set_mx($!rb, $mmx);
   }
 
-  method set_target (Str() $target) {
+  method set_target (Str() $target) is also<set-target> {
     gssdp_resource_browser_set_target($!rb, $target);
   }
 
