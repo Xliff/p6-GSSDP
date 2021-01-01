@@ -13,24 +13,24 @@ use GIO::InetAddress;
 use GIO::InetAddressMask;
 
 use GLib::Roles::Object;
-use GLib::Roles::Initiable;
+use GIO::Roles::Initable;
 use GSSDP::Roles::Signals::Client;
 
 our subset GSSDPClientAncestry is export of Mu
-  where GSSDPClient | GObject;
+  where GSSDPClient | GInitable | GObject;
 
 class GSSDP::Client {
   also does GLib::Roles::Object;
-  also does GLib::Roles::Initable;
+  also does GIO::Roles::Initable;
   also does GSSDP::Roles::Signals::Client;
 
   has GSSDPClient $!c is implementor;
 
-  submethod BUILD (:$client) {
-    self.setGSSDPClient($client) if $client;
+  submethod BUILD (:$client, :$init, :$cancellable) {
+    self.setGSSDPClient($client, :$init, :$cancellable) if $client;
   }
 
-  method setGSSDPClient (GSSDPClientAncestry $_) {
+  method setGSSDPClient (GSSDPClientAncestry $_, :$init, :$cancellable) {
     my $to-parent;
 
     $!c = do {
@@ -39,19 +39,77 @@ class GSSDP::Client {
         $_;
       }
 
+      when GInitable {
+        $to-parent = cast(GObject, $_);
+        $!i = $_;
+        cast(GSSDPClient, $_);
+      }
+
       default {
         $to-parent = $_;
         cast(GSSDPClient, $_);
       }
     }
     self!setObject($to-parent);
+    self.roleInit-Initable(:$init, :$cancellable);
   }
 
   method GSSDP::Raw::Definitions::GSSDPClient
     is also<GSSDPClient>
   { $!c }
 
-  # Type: gboolean
+  my %attributes = (
+     active       => G_TYPE_BOOLEAN,
+     host-ip      => G_TYPE_STRING,
+     interface    => G_TYPE_STRING,
+     main-context => G_TYPE_POINTER,
+     msearch-port => G_TYPE_UINT,
+     network      => G_TYPE_STRING,
+     server-id    => G_TYPE_STRING,
+     socket-ttl   => G_TYPE_UINT,
+  );
+
+  method attributes ($key) {
+    %attributes{$key}:exists ?? %attributes{$key}
+                             !! die "Attribute '{ $key }' does not exist"
+  }
+
+
+  multi method new (GSSDPClientAncestry $client, :$ref = True) {
+    return Nil unless $client;
+
+    my $o = self.bless( :$client );
+    $o.ref if $ref;
+    $o;
+  }
+  multi method new (
+    Str()                   $iface,
+    CArray[Pointer[GError]] $error = gerror
+  ) {
+    clear_error;
+    my $client = gssdp_client_new($iface, $error);
+    set_error($error);
+
+    $client ?? self.bless( :$client ) !! Nil;
+  }
+
+  method new_with_port (
+    Str()                   $iface,
+    Int()                   $msearch_port,
+    CArray[Pointer[GError]] $error
+  )
+    is also<new-with-port>
+  {
+    my guint16 $m = $msearch_port;
+
+    clear_error;
+    my $client = gssdp_client_new_with_port($iface, $m, $error);
+    set_error($error);
+
+    $client ?? self.bless( :$client ) !! Nil;
+  }
+
+  #| Type: gboolean
   method active is rw  {
     my $gv = GLib::Value.new( G_TYPE_BOOLEAN );
     Proxy.new(
@@ -68,7 +126,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: gchar
+  #| Type: gchar
   method host-ip is rw  is also<host_ip> {
     my $gv = GLib::Value.new( G_TYPE_STRING );
     Proxy.new(
@@ -84,7 +142,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: gchar
+  #| Type: gchar
   method interface is rw  {
     my $gv = GLib::Value.new( G_TYPE_STRING );
     Proxy.new(
@@ -100,7 +158,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: gpointer
+  #| Type: gpointer
   method main-context (:$raw = False)
     is rw
     is DEPRECATED
@@ -127,7 +185,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: guint
+  #| Type: guint
   method msearch-port is rw  is also<msearch_port> {
     my $gv = GLib::Value.new( G_TYPE_UINT );
     Proxy.new(
@@ -143,7 +201,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: gchar
+  #| Type: gchar
   method network is rw  {
     my $gv = GLib::Value.new( G_TYPE_STRING );
     Proxy.new(
@@ -159,7 +217,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: gchar
+  #| Type: gchar
   method server-id is rw  is also<server_id> {
     my $gv = GLib::Value.new( G_TYPE_STRING );
     Proxy.new(
@@ -176,7 +234,7 @@ class GSSDP::Client {
     );
   }
 
-  # Type: guint
+  #| Type: guint
   method socket-ttl is rw  is also<socket_ttl> {
     my $gv = GLib::Value.new( G_TYPE_UINT );
     Proxy.new(
@@ -196,41 +254,6 @@ class GSSDP::Client {
   # GSSDPClient, gchar, guint, gint, gpointer, gpointer --> void
   method message-received is also<message_received> {
     self.connect-message-received($!c);
-  }
-
-  multi method new (GSSDPClientAncestry $client, :$ref = True) {
-    return Nil unless $client;
-
-    my $o = self.bless( :$client );
-    $o.ref if $ref;
-    $o;
-  }
-  multi method new (
-    GMainContext()          $context,
-    Str()                   $iface,
-    CArray[Pointer[GError]] $error = gerror
-  ) {
-    clear_error;
-    my $client = gssdp_client_new($context, $iface, $error);
-    set_error($error);
-
-    $client ?? self.bless( :$client ) !! Nil;
-  }
-
-  method new_with_port (
-    Str()                   $iface,
-    Int()                   $msearch_port,
-    CArray[Pointer[GError]] $error
-  )
-    is also<new-with-port>
-  {
-    my guint16 $m = $msearch_port;
-
-    clear_error;
-    my $client = gssdp_client_new_with_port($iface, $m, $error);
-    set_error($error);
-
-    $client ?? self.bless( :$client ) !! Nil;
   }
 
   method add_cache_entry (Str() $ip_address, Str() $user_agent)
