@@ -25,10 +25,10 @@ sub get-client {
   once {
     say 'Detecting network interface to use for tests...';
     my $client = GSSDP::Client.new($device = 'lo');
-    unless $ERROR {
+    if $ERROR {
       my $client = GSSDP::Client.new($device = 'lo0');
-      unless $ERROR {
-        say 'Using default interface, expect fails');
+      if $ERROR {
+        say 'Using default interface, expect fails';
         return;
       }
     }
@@ -37,36 +37,35 @@ sub get-client {
   GSSDP::Client.new($device);
 }
 
-sub create-socket ($nt, $usn) {
+sub create-socket {
   my $socket = GIO::Socket.new;
   nok $ERROR, 'No error detected creating socket';
 
   my $address   = GIO::InetAddress.new-from-string('127.0.0.1');
   my $sock-addr = GIO::InetSocketAddress.new($address);
-  $socket.bind($sock_addr);
+  $socket.bind($sock-addr, True);
   nok $ERROR, 'No error detected creating socket';
 
-  .unref for $sock_addr, $address;
+  .unref for $sock-addr, $address;
   $socket;
 }
 
-sub create-alive-message($nt is copy, $max-life) {
-  $nt = "{ UUID_1 }::$nt" unless $nt eq UUID_1;
+sub create-alive-message ($nt, $max-life) {
   build-alive-message(
     age      => $max-life,
     location => 'http://127.0.0.1:1234',
-    server   => 'Linux/3.0 UPnP/1.0 GSSDPTesting/0.0.0'
+    server   => 'Linux/3.0 UPnP/1.0 GSSDPTesting/0.0.0',
+    usn      => $nt eq UUID_1 ?? UUID_1 !! "{ UUID_1 }::$nt",
     :$nt,
-    :$usn
   );
 }
 
 sub send-packet ($msg) {
   my $socket    = create-socket;
-  my $address   = GIO::InetAddress.new-from-string(SDDP_ADDR);
-  my $sock-addr = GIO::InetSocketAddress.new($address, SDDP_PORT);
+  my $address   = GIO::InetAddress.new-from-string(SSDP_ADDR);
+  my $sock-addr = GIO::InetSocketAddress.new($address, SSDP_PORT);
 
-  $socket.send-to($sock_addr, $msg);
+  $socket.send-to($sock-addr, $msg);
   nok $ERROR, 'No error detected when sending message to socket';
   .unref for $sock-addr, $address;
   0;
@@ -86,7 +85,7 @@ sub test-bgo673150 {
   $group.add-resource-simple(USN, UUID_1~'::'~USN, 'http://127.0.0.1/3456');
   $group.max-age = 10;
 
-  my $browser = GSDDP::ResourceBrowser.new(USN_1);
+  my $browser = GSSDP::ResourceBrowser.new($dest, USN_1);
   $browser.resource-unavailable.tap({
     say 'Resource suddenly unavailable, exiting!';
     $loop.quit;
@@ -95,16 +94,16 @@ sub test-bgo673150 {
   GLib::Timeout.add-seconds(5, -> *@a {
     $browser.active = True;
     ok  $browser.active, 'Resource browser is active';
-    0;
-  })
+    G_SOURCE_REMOVE;
+  });
   $group.available = True;
   ok  $group.available,  'Resource group is available';
 
   $loop = GLib::MainLoop.new;
-  GLib::timeout.add-seconds(30, -> *@a { $loop.quit })
+  GLib::Timeout.add-seconds(30, -> *@a { $loop.quit; G_SOURCE_REMOVE });
   $loop.run;
 
-  $browser.resource-unavailable.untap;
+  #$browser.resource-unavailable.untap;
   .unref for $group, $browser, $src, $dest, $loop;
 }
 
@@ -115,19 +114,21 @@ sub test-bgo682099 {
 
   my $browser = GSSDP::ResourceBrowser.new($dest, USN_1);
   $browser.resource-unavailable.tap(-> *@a {
+    CATCH { default { .message.say; .backtrace.concise.say } }
     is @a[1], NT_1, 'Resource available event contains proper USN';
     $loop.quit;
   });
   $browser.active = True;
   GLib::Timeout.add-seconds(2, -> *@a {
-    send_packet( create-alive-message(USN_1, 5) );
+    CATCH { default { .message.say; .backtrace.concise.say } }
+    send-packet( create-alive-message(USN_1, 5) );
     G_SOURCE_REMOVE;
   });
   $loop.run;
 
   $browser.resource-unavailable.tap(:replace, -> *@a {
     die 'UNEXPECTED! - Resource became unavailable!';
-  })
+  });
   GLib::Source.idle-add(-> *@a {
     $browser.unref;
     G_SOURCE_REMOVE;
@@ -197,14 +198,14 @@ sub test-bgo724030 {
   $browser.unref;
 }
 
-sub test-ggo-1 {
+sub test-ggo1 {
   my $loop = GLib::MainLoop.new;
   my $dest = get-client();
   ok  $dest,  'Destination client created successfully';
   nok $ERROR, 'No errors were detected during creation';
   $dest.append-header('Foo', 'bar');
 
-  given $group = GSSDP::ResourceGroup.new($dest) {
+  given my $group = GSSDP::ResourceGroup.new($dest) {
     ok  $_,   'Resource group created successfully';
     .add-resource-simple(
       USN,
@@ -222,12 +223,12 @@ sub test-ggo-1 {
   $loop.run;
 }
 
-sub test-ggo-7 {
+sub test-ggo7 {
   my $client = GSSDP::Client.new_initable(host-ip => '127.0.0.1');
   ok  $client, 'Initable client created successfully';
   nok $ERROR,  'No errors detected during creation';
 
-  my $iface = $client.get-interface
+  my $iface = $client.get-interface;
   diag "Found adapter { $iface } for 127.0.0.1";
   $client.clear_object;
 
@@ -248,8 +249,8 @@ sub test-ggo-7 {
   ok  $client.get-address-mask, 'Client created with addres mask';
 }
 
-subtest 'BGO #673150', { test-bgo673150() }
-subtest 'BGO #682099', { test-bgo682099() }
-subtest 'BGO #724030', { test-bgo724030() }
-subtest 'GGO 1',       { test-ggo-1()     }
-subtest 'GGO 7',       { test-ggo-7()     }
+subtest 'BGO 673150', { test-bgo673150() }
+subtest 'BGO 682099', { test-bgo682099() }
+subtest 'BGO 724030', { test-bgo724030() }
+subtest 'GGO 1',      { test-ggo1()      }
+subtest 'GGO 7',      { test-ggo7()      }
