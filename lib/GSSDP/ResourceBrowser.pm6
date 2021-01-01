@@ -45,6 +45,9 @@ class GSSDP::ResourceBrowser {
     is also<GSSDPResourceBrowser>
   { $!rb }
 
+  proto method new (|)
+  { * } 
+
   multi method new (GSSDPResourceBrowserAncestry $browser, :$ref = True) {
     return Nil unless $browser;
 
@@ -52,8 +55,8 @@ class GSSDP::ResourceBrowser {
     $o.ref if $ref;
     $o;
   }
-  multi method new (Str() $target) {
-    my $browser = gssdp_resource_browser_new($!rb, $target);
+  multi method new (GSSDPClient() $client, Str() $target) {
+    my $browser = gssdp_resource_browser_new($client, $target);
 
     $browser ?? self.bless( :$browser ) !! Nil;
   }
