@@ -205,3 +205,10 @@ constant SSDP_BYEBYE_NTS      is export = 'ssdp:byebye';
 constant SSDP_UPDATE_NTS      is export = 'ssdp:update';
 constant SSDP_DEFAULT_MAX_AGE is export = 1800;
 constant SSDP_DEFAULT_MX      is export = 3;
+
+sub gssdp_error ()
+  returns GQuark
+  is export
+  is symbol('gssdp_error_quark')
+  is native(gssdp)
+{ * }
