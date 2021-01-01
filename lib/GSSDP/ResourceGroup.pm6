@@ -1,5 +1,7 @@
 use v6.c;
 
+use Method::Also;
+
 use GSSDP::Raw::Types;
 use GSSDP::Raw::ResourceGroup;
 
@@ -37,6 +39,7 @@ class GSSDP::ResourceGroup {
   }
 
   method GSSDP::Raw::GSSDPResourceGroup
+    is also<GSSDPResourceGroup>
   { $!rg }
 
   multi method new (GSSDPResourceGroupAncestry $group, :$ref = True) {
@@ -93,7 +96,7 @@ class GSSDP::ResourceGroup {
   }
 
   # Type: guint
-  method max-age is rw  {
+  method max-age is rw  is also<max_age> {
     my $gv = GLib::Value.new( G_TYPE_UINT );
     Proxy.new(
       FETCH => sub ($) {
@@ -110,7 +113,7 @@ class GSSDP::ResourceGroup {
   }
 
   # Type: guint
-  method message-delay is rw  {
+  method message-delay is rw  is also<message_delay> {
     my $gv = GLib::Value.new( G_TYPE_UINT );
     Proxy.new(
       FETCH => sub ($) {
@@ -126,19 +129,23 @@ class GSSDP::ResourceGroup {
     );
   }
 
-  method add_resource (Str() $target, Str() $usn, GList() $locations) {
+  method add_resource (Str() $target, Str() $usn, GList() $locations)
+    is also<add-resource>
+  {
     gssdp_resource_group_add_resource($!rg, $target, $usn, $locations);
   }
 
-  method add_resource_simple (Str() $target, Str() $usn, Str() $location) {
+  method add_resource_simple (Str() $target, Str() $usn, Str() $location)
+    is also<add-resource-simple>
+  {
     gssdp_resource_group_add_resource_simple($!rg, $target, $usn, $location);
   }
 
-  method get_available {
+  method get_available is also<get-available> {
     so gssdp_resource_group_get_available($!rg);
   }
 
-  method get_client (:$raw = False) {
+  method get_client (:$raw = False) is also<get-client> {
     my $c = gssdp_resource_group_get_client($!rg);
 
     $c ??
@@ -147,33 +154,33 @@ class GSSDP::ResourceGroup {
       Nil;
   }
 
-  method get_max_age {
+  method get_max_age is also<get-max-age> {
     gssdp_resource_group_get_max_age($!rg);
   }
 
-  method get_message_delay {
+  method get_message_delay is also<get-message-delay> {
     gssdp_resource_group_get_message_delay($!rg);
   }
 
-  method remove_resource (Int() $resource_id) {
+  method remove_resource (Int() $resource_id) is also<remove-resource> {
     my guint $r = $resource_id;
 
     gssdp_resource_group_remove_resource($!rg, $r);
   }
 
-  method set_available (Int() $available) {
+  method set_available (Int() $available) is also<set-available> {
     my gboolean $a = $available.so.Int;
 
     gssdp_resource_group_set_available($!rg, $a);
   }
 
-  method set_max_age (Int() $max_age) {
+  method set_max_age (Int() $max_age) is also<set-max-age> {
     my guint $m = $max_age;
 
     gssdp_resource_group_set_max_age($!rg, $m);
   }
 
-  method set_message_delay (Int() $message_delay) {
+  method set_message_delay (Int() $message_delay) is also<set-message-delay> {
     my guint $m = $message_delay;
 
     gssdp_resource_group_set_message_delay($!rg, $m);
