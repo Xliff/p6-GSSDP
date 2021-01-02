@@ -83,7 +83,7 @@ class GSSDP::Client {
     $o;
   }
   multi method new (
-    Str()                   $iface,
+    Str()                   $iface = Str,
     CArray[Pointer[GError]] $error = gerror
   ) {
     clear_error;
