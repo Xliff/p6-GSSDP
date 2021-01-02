@@ -59,7 +59,13 @@ multi sub build-discovery-request (
   build-discovery-request($host, $st, $mx, $ua);
 }
 multi sub build-discovery-request ($host, $st, $mx, $ua) is export {
-  sprintf(SSDP_DISCOVERY_REQUEST, $host, $st, $mx, $ua);
+  sprintf(
+    SSDP_DISCOVERY_REQUEST.subst("\n", "\r\n"),
+    $host,
+    $st,
+    $mx,
+    $ua
+  );
 }
 
 constant SSDP_DISCOVERY_RESPONSE is export = q:to/RESPONSE/;
@@ -83,7 +89,14 @@ multi sub build-discovery-response (
   :$age      = '',
   :$date     = ''
 ) is export {
-  build-discovery-response($location, $data, $usn, $server, $age, $date);
+  build-discovery-response(
+    $location,
+    $data,
+    $usn,
+    $server,
+    $age,
+    $date
+  );
 }
 multi sub build-discovery-response (
   $location,
@@ -94,7 +107,7 @@ multi sub build-discovery-response (
   $date
 ) is export {
   sprintf(
-    SSDP_DISCOVERY_RESPONSE,
+    SSDP_DISCOVERY_RESPONSE.subst("\n", "\r\n"),
     $location,
     $data,
     $usn,
@@ -104,17 +117,16 @@ multi sub build-discovery-response (
   );
 }
 
-constant SSDP_ALIVE_MESSAGE is export = qq:to/MESSAGE/;
-  NOTIFY * HTTP/1.1
-  Host: %s:{ SSDP_PORT_STR }
-  Cache-Control: max-age=%d
-  Location: %s
-  %s
-  Server: %s
-  NTS: ssdp:alive
-  NT: %s
-  USN: %s
-  MESSAGE
+constant SSDP_ALIVE_MESSAGE is export =
+  "NOTIFY * HTTP/1.1\r\n"           ~
+  "Host: %s:{ SSDP_PORT_STR }\r\n"  ~
+  "Cache-Control: max-age=%d\r\n"   ~
+  "Location: %s\r\n"                ~
+  "%s"                              ~
+  "Server: %s\r\n"                  ~
+  "NTS: ssdp:alive\r\n"             ~
+  "NT: %s\r\n"                      ~
+  "USN: %s\r\n"                     ;
 
 multi sub build-alive-message (
   :$host     = SSDP_ADDR,
@@ -145,7 +157,7 @@ multi sub build-alive-message(
   $usn
 ) is export {
   sprintf(
-    SSDP_ALIVE_MESSAGE,
+    SSDP_ALIVE_MESSAGE.subst("\n", "\r\n"),
     $host,
     $age,
     $location,
@@ -164,15 +176,20 @@ constant SSDP_BYEBYE_MESSAGE is export = qq:to/MESSAGE/;
   USN: %s
   MESSAGE
 
-multi sub build_byebye_message (
+multi sub build-byebye-message (
   :$host = SSDP_ADDR,
   :$nt   = '',
   :$usn  = ''
 ) is export {
-  build_byebye_message($host, $nt, $usn);
+  build-byebye-message($host, $nt, $usn);
 }
-multi sub build_byebye_message ($host, $nt, $usn) is export {
-  sprintf(SSDP_BYEBYE_MESSAGE, $host, $nt, $usn);
+multi sub build-byebye-message ($host, $nt, $usn) is export {
+  sprintf(
+    SSDP_BYEBYE_MESSAGE.subst("\n", "\r\n"),
+    $host,
+    $nt,
+    $usn
+  );
 }
 
 constant SSDP_UPDATE_MESSAGE is export = qq:to/MESSAGE/;
@@ -185,17 +202,24 @@ constant SSDP_UPDATE_MESSAGE is export = qq:to/MESSAGE/;
   NEXTBOOTID.UPNP.ORG: %u
   MESSAGE
 
-multi sub build_update_message (
+multi sub build-update-message (
   :$host     = SSDP_ADDR,
   :$location = '',
   :$nt       = '',
   :$usn      = '',
   :$bootid   = ''
 ) {
-  build_update_message($host, $location, $nt, $usn, $bootid);
+  build-update-message($host, $location, $nt, $usn, $bootid);
 }
-multi sub build_update_message ($host, $location, $nt, $usn, $bootid) {
-  sprintf(SSDP_UPDATE_MESSAGE, $host, $location, $nt, $usn, $bootid);
+multi sub build-update-message ($host, $location, $nt, $usn, $bootid) {
+  sprintf(
+    SSDP_UPDATE_MESSAGE.subst("\n", "\r\n"),
+    $host,
+    $location,
+    $nt,
+    $usn,
+    $bootid
+  );
 }
 
 constant SSDP_SEARCH_METHOD   is export = 'M-SEARCH';
