@@ -64,7 +64,7 @@ role GSSDP::Roles::Signals::ResourceBrowser {
 sub g-connect-resource-available(
   Pointer $app,
   Str     $name,
-          &handler (Pointer, gchar, gpointer, Pointer),
+          &handler (Pointer, Str, GList, Pointer),
   Pointer $data,
   uint32  $flags
 )
@@ -77,7 +77,7 @@ sub g-connect-resource-available(
 sub g-connect-resource-unavailable(
   Pointer $app,
   Str     $name,
-          &handler (Pointer, gchar, Pointer),
+          &handler (Pointer, Str, Pointer),
   Pointer $data,
   uint32  $flags
 )
