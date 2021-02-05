@@ -1,11 +1,15 @@
 use v6.c;
 
+use NativeCall;
+
 use GLib::Raw::Definitions;
+
+use GLib::Roles::Pointers;
 
 unit package GSSDP::Raw::Definitions;
 
 # Forced recompile constant
-constant forced = 0;
+constant forced = 13;
 
 # GSSDP
 constant gssdp               is export = 'gssdp-1.2',v0;
