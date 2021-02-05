@@ -26,11 +26,21 @@ class GSSDP::Client {
 
   has GSSDPClient $!c is implementor;
 
-  submethod BUILD (:$client, :$init, :$cancellable) {
+  # cw: ALL initiables need :$object
+  submethod BUILD (:$client is copy, :$init, :$cancellable, :$initable-object) {
+    $client //= $initable-object if $initable-object;
+
+    say "GSSDP - CLIENT = { $client // '<<NIL>>' } // OBJECT = { $initable-object // '<<NIL>>' }"
+      if $DEBUG;
+
     self.setGSSDPClient($client, :$init, :$cancellable) if $client;
   }
 
   method setGSSDPClient (GSSDPClientAncestry $_, :$init, :$cancellable) {
+    # cw: THIS SHOULD NEVER BE NECESSARY! However the screwed up build
+    #     sementics make it NECESSARY for initables. Why?
+    return if $!c;
+
     my $to-parent;
 
     $!c = do {
@@ -74,7 +84,6 @@ class GSSDP::Client {
                              !! die "Attribute '{ $key }' does not exist"
   }
 
-
   multi method new (GSSDPClientAncestry $client, :$ref = True) {
     return Nil unless $client;
 
@@ -92,11 +101,18 @@ class GSSDP::Client {
 
     $client ?? self.bless( :$client ) !! Nil;
   }
+  multi method new (
+    GCancellable()          $cancellable      =  GCancellable,
+    CArray[Pointer[GError]] $error            =  gerror,
+                            :init(:$initable) is required
+  ) {
+    self.construct('client', $cancellable, $error);
+  }
 
   method new_with_port (
     Str()                   $iface,
     Int()                   $msearch_port,
-    CArray[Pointer[GError]] $error
+    CArray[Pointer[GError]] $error         = gerror
   )
     is also<new-with-port>
   {
@@ -314,6 +330,12 @@ class GSSDP::Client {
 
   method get_server_id is also<get-server-id> {
     gssdp_client_get_server_id($!c);
+  }
+
+  method get_type is also<get-type> {
+    state ($n, $t);
+
+    unstable_get_type( &self.^name, &gssdp_client_get_type, $n, $t );
   }
 
   method get_uda_version is also<get-uda-version> {

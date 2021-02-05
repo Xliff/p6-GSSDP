@@ -138,3 +138,9 @@ sub gssdp_client_set_server_id (GSSDPClient $client, Str $server_id)
   is native(gssdp)
   is export
 { * }
+
+sub gssdp_client_get_type ()
+  returns GType
+  is native(gssdp)
+  is export
+{ * }
