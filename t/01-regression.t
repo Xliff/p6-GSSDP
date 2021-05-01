@@ -14,6 +14,11 @@ use GSSDP::Client;
 use GSSDP::ResourceBrowser;
 use GSSDP::ResourceGroup;
 
+use SOUP::MessageHeaders;
+
+use GLib::GList;
+use GLib::Roles::ListData;
+
 constant UUID_1 is export = 'uuid:81909e94-ebf4-469e-ac68-81f2f189de1b';
 constant USN    is export = 'urn:org-gupnp:device:RegressionTest673150:2';
 constant USN_1  is export = 'urn:org-gupnp:device:RegressionTest673150:1';
@@ -65,6 +70,7 @@ sub send-packet ($msg) {
   my $address   = GIO::InetAddress.new-from-string(SSDP_ADDR);
   my $sock-addr = GIO::InetSocketAddress.new($address, SSDP_PORT);
 
+  diag $msg;
   $socket.send-to($sock-addr, $msg);
   nok $ERROR, 'No error detected when sending message to socket';
   .unref for $sock-addr, $address;
@@ -86,7 +92,7 @@ sub test-bgo673150 {
   $group.max-age = 10;
 
   my $browser = GSSDP::ResourceBrowser.new($dest, USN_1);
-  $browser.resource-unavailable.tap({
+  $browser.resource-unavailable.tap(-> *@a {
     say 'Resource suddenly unavailable, exiting!';
     $loop.quit;
   });
@@ -108,11 +114,25 @@ sub test-bgo673150 {
 }
 
 sub test-bgo682099 {
+  diag 'BGO 682099';
   my ($loop, $dest) = ( GLib::MainLoop.new, get-client() );
   ok  $dest,  'Destination client created successfully';
   nok $ERROR, 'No errors were detected during creation';
 
+  $dest.message-received.tap(-> *@a {
+    diag "Message received from: { @a[1] }\nOn Port: { @a[2] }\nType: { @a[3] }";
+    my $h = SOUP::MessageHeaders.new( @a[4] );
+    $h.foreach(-> *@a {
+      say "{ @a[0] } = { @a[1] }";
+    })
+  });
+
   my $browser = GSSDP::ResourceBrowser.new($dest, USN_1);
+  $browser.resource-available.tap(-> *@a {
+    "Available: { @a[1] }".say;
+    say 'Locations:';
+    .say for (GLib::GList.new(@a[2]) but GLib::Roles::ListData[Str]).Array;
+  });
   $browser.resource-unavailable.tap(-> *@a {
     CATCH { default { .message.say; .backtrace.concise.say } }
     is @a[1], NT_1, 'Resource available event contains proper USN';
@@ -122,6 +142,11 @@ sub test-bgo682099 {
   GLib::Timeout.add-seconds(2, -> *@a {
     CATCH { default { .message.say; .backtrace.concise.say } }
     send-packet( create-alive-message(USN_1, 5) );
+    send-packet( build-byebye-message() );
+    G_SOURCE_REMOVE;
+  });
+  GLib::Timeout.add-seconds(4, -> *@a {
+    $loop.quit;
     G_SOURCE_REMOVE;
   });
   $loop.run;
@@ -129,11 +154,14 @@ sub test-bgo682099 {
   $browser.resource-unavailable.tap(:replace, -> *@a {
     die 'UNEXPECTED! - Resource became unavailable!';
   });
-  GLib::Source.idle-add(-> *@a {
+  #GLib::Source.idle-add(-> *@a {
+  GLib::Timeout.add-seconds(4, -> *@a {
+    say 'Unref...';
     $browser.unref;
     G_SOURCE_REMOVE;
   });
   GLib::Timeout.add-seconds(10, -> *@a {
+    say 'Quitting...';
     $loop.quit;
     G_SOURCE_REMOVE;
   });
@@ -249,7 +277,7 @@ sub test-ggo7 {
   ok  $client.get-address-mask, 'Client created with addres mask';
 }
 
-subtest 'BGO 673150', { test-bgo673150() }
+#subtest 'BGO 673150', { test-bgo673150() }
 subtest 'BGO 682099', { test-bgo682099() }
 subtest 'BGO 724030', { test-bgo724030() }
 subtest 'GGO 1',      { test-ggo1()      }
