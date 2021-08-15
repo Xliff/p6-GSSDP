@@ -1,11 +1,11 @@
 Dependency Generation
 =====================
-real 0.64
-user 1.02
-sys 0.03
+real 0.57
+user 0.92
+sys 0.04
  === GIO::DBus::Raw::Types === (1/35)
 Stage start      :   0.000
-Stage parse      :   2.453
+Stage parse      :   2.422
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -14,16 +14,16 @@ Stage mbc        :   0.002
 Stage moar       :   0.000
  === GIO::InetAddress === (2/35)
 Stage start      :   0.000
-Stage parse      :   2.805
+Stage parse      :   2.871
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
 Stage mast       :   0.001
-Stage mbc        :   0.003
+Stage mbc        :   0.004
 Stage moar       :   0.000
  === GIO::InetAddressMask === (3/35)
 Stage start      :   0.000
-Stage parse      :   2.850
+Stage parse      :   2.818
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -32,7 +32,7 @@ Stage mbc        :   0.003
 Stage moar       :   0.000
  === GIO::Raw::Definitions === (4/35)
 Stage start      :   0.000
-Stage parse      :   2.138
+Stage parse      :   2.045
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -41,16 +41,16 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GIO::Raw::Enums === (5/35)
 Stage start      :   0.000
-Stage parse      :   2.152
+Stage parse      :   2.043
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.003
-Stage mast       :   0.012
-Stage mbc        :   0.001
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
 Stage moar       :   0.000
  === GIO::Raw::Exports === (6/35)
 Stage start      :   0.000
-Stage parse      :   1.962
+Stage parse      :   1.862
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -59,7 +59,7 @@ Stage mbc        :   0.000
 Stage moar       :   0.000
  === GIO::Raw::Quarks === (7/35)
 Stage start      :   0.000
-Stage parse      :   2.371
+Stage parse      :   2.298
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -68,25 +68,25 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GIO::Raw::Structs === (8/35)
 Stage start      :   0.000
-Stage parse      :   2.345
+Stage parse      :   2.303
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
 Stage mast       :   0.001
-Stage mbc        :   0.016
+Stage mbc        :   0.001
 Stage moar       :   0.000
  === GIO::Raw::Subs === (9/35)
 Stage start      :   0.000
-Stage parse      :   2.374
+Stage parse      :   2.237
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
+Stage optimize   :   0.000
 Stage mast       :   0.001
-Stage mbc        :   0.001
+Stage mbc        :   0.024
 Stage moar       :   0.000
  === GIO::Roles::Initable === (10/35)
 Stage start      :   0.000
-Stage parse      :   2.794
+Stage parse      :   2.715
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -95,7 +95,7 @@ Stage mbc        :   0.003
 Stage moar       :   0.000
  === GLib::MainContext === (11/35)
 Stage start      :   0.000
-Stage parse      :   2.451
+Stage parse      :   2.269
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -104,7 +104,7 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Raw::Definitions === (12/35)
 Stage start      :   0.000
-Stage parse      :   2.177
+Stage parse      :   2.011
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -113,16 +113,16 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Raw::Enums === (13/35)
 Stage start      :   0.000
-Stage parse      :   2.170
+Stage parse      :   2.091
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.003
-Stage mast       :   0.013
-Stage mbc        :   0.003
+Stage mast       :   0.059
+Stage mbc        :   0.002
 Stage moar       :   0.000
  === GLib::Raw::Exceptions === (14/35)
 Stage start      :   0.000
-Stage parse      :   1.967
+Stage parse      :   1.874
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -131,7 +131,7 @@ Stage mbc        :   0.000
 Stage moar       :   0.000
  === GLib::Raw::Exports === (15/35)
 Stage start      :   0.000
-Stage parse      :   2.007
+Stage parse      :   1.885
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -140,7 +140,7 @@ Stage mbc        :   0.000
 Stage moar       :   0.000
  === GLib::Raw::Object === (16/35)
 Stage start      :   0.000
-Stage parse      :   2.270
+Stage parse      :   2.034
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -149,7 +149,7 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Raw::Struct_Subs === (17/35)
 Stage start      :   0.000
-Stage parse      :   2.144
+Stage parse      :   2.063
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -158,34 +158,34 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Raw::Structs === (18/35)
 Stage start      :   0.000
-Stage parse      :   2.313
+Stage parse      :   2.235
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
+Stage optimize   :   0.000
 Stage mast       :   0.001
 Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Raw::Subs === (19/35)
 Stage start      :   0.000
-Stage parse      :   2.393
+Stage parse      :   2.125
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
+Stage optimize   :   0.000
 Stage mast       :   0.002
 Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Roles::Object === (20/35)
 Stage start      :   0.000
-Stage parse      :   2.623
+Stage parse      :   2.439
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
 Stage mast       :   0.001
-Stage mbc        :   0.016
+Stage mbc        :   0.002
 Stage moar       :   0.000
  === GLib::Roles::Pointers === (21/35)
 Stage start      :   0.000
-Stage parse      :   2.112
+Stage parse      :   1.977
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
@@ -194,16 +194,16 @@ Stage mbc        :   0.001
 Stage moar       :   0.000
  === GLib::Value === (22/35)
 Stage start      :   0.000
-Stage parse      :   2.421
+Stage parse      :   2.261
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
 Stage mast       :   0.001
-Stage mbc        :   0.026
+Stage mbc        :   0.002
 Stage moar       :   0.000
  === Method::Also === (23/35)
 Stage start      :   0.000
-Stage parse      :   1.977
+Stage parse      :   1.846
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -212,25 +212,25 @@ Stage mbc        :   0.000
 Stage moar       :   0.000
  === NativeCall === (24/35)
 Stage start      :   0.000
-Stage parse      :   2.110
+Stage parse      :   1.953
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.000
 Stage mast       :   0.001
-Stage mbc        :   0.000
+Stage mbc        :   0.001
 Stage moar       :   0.000
  === GSSDP::Raw::Definitions === (25/35)
 Stage start      :   0.000
 
     precomp lib/GSSDP/Raw/Definitions.pm6
     Stage start      :   0.000
-    Stage parse      :   2.527
+    Stage parse      :   2.367
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
     Stage optimize   :   0.011
-    Stage mast       :   0.046
-    Stage mbc        :   0.006
-Stage parse      :   4.644
+    Stage mast       :   0.033
+    Stage mbc        :   0.005
+Stage parse      :   4.349
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -242,17 +242,17 @@ Stage start      :   0.000
 
     precomp lib/GSSDP/Raw/Client.pm6
     Stage start      :   0.000
-    Stage parse      :   3.136
+    Stage parse      :   2.952
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
-    Stage optimize   :   0.017
-    Stage mast       :   0.041
-    Stage mbc        :   0.027
-Stage parse      :   5.364
+    Stage optimize   :   0.021
+    Stage mast       :   0.037
+    Stage mbc        :   0.022
+Stage parse      :   5.189
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.003
+Stage optimize   :   0.000
+Stage mast       :   0.001
 Stage mbc        :   0.001
 Stage moar       :   0.000
  === GSSDP::Raw::ResourceBrowser === (27/35)
@@ -260,49 +260,40 @@ Stage start      :   0.000
 
     precomp lib/GSSDP/Raw/ResourceBrowser.pm6
     Stage start      :   0.000
-    Stage parse      :   2.480
+    Stage parse      :   2.274
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
-    Stage optimize   :   0.005
-    Stage mast       :   0.023
+    Stage optimize   :   0.012
+    Stage mast       :   0.020
     Stage mbc        :   0.005
-Stage parse      :   4.571
+Stage parse      :   4.422
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.003
-Stage mbc        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
 Stage moar       :   0.000
  === GSSDP::Raw::ResourceGroup === (28/35)
 Stage start      :   0.000
 
     precomp lib/GSSDP/Raw/ResourceGroup.pm6
     Stage start      :   0.000
-    Stage parse      :   2.791
+    Stage parse      :   2.654
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
     Stage optimize   :   0.007
-    Stage mast       :   0.034
-    Stage mbc        :   0.008
-Stage parse      :   4.948
+    Stage mast       :   0.031
+    Stage mbc        :   0.009
+Stage parse      :   4.860
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.014
+Stage optimize   :   0.000
+Stage mast       :   0.001
 Stage mbc        :   0.000
 Stage moar       :   0.000
  === GSSDP::Raw::Exports === (29/35)
 Stage start      :   0.000
-
-    precomp lib/GSSDP/Raw/Exports.pm6
-    Stage start      :   0.000
-    Stage parse      :   0.110
-    Stage syntaxcheck:   0.000
-    Stage ast        :   0.000
-    Stage optimize   :   0.001
-    Stage mast       :   0.003
-    Stage mbc        :   0.002
-Stage parse      :   2.155
+Stage parse      :   1.881
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
 Stage optimize   :   0.001
@@ -314,36 +305,36 @@ Stage start      :   0.000
 
     precomp lib/GSSDP/Raw/Types.pm6
     Stage start      :   0.000
-    Stage parse      :   3.172
+    Stage parse      :   2.942
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
     Stage optimize   :   0.001
-    Stage mast       :   0.015
+    Stage mast       :   0.014
     Stage mbc        :   0.003
-Stage parse      :   5.392
+Stage parse      :   5.228
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.011
-Stage mast       :   0.016
-Stage mbc        :   0.009
+Stage optimize   :   0.006
+Stage mast       :   0.013
+Stage mbc        :   0.005
 Stage moar       :   0.000
  === GSSDP::ResourceGroup === (31/35)
 Stage start      :   0.000
 
     precomp lib/GSSDP/ResourceGroup.pm6
     Stage start      :   0.000
-    Stage parse      :   3.297
+    Stage parse      :   3.178
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
-    Stage optimize   :   0.014
-    Stage mast       :   0.118
-    Stage mbc        :   0.049
+    Stage optimize   :   0.018
+    Stage mast       :   0.045
+    Stage mbc        :   0.012
 R: GLib::Roles::Object
-Stage parse      :   5.689
+Stage parse      :   5.575
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.014
+Stage optimize   :   0.012
+Stage mast       :   0.001
 Stage mbc        :   0.001
 Stage moar       :   0.000
  === GSSDP::Roles::Signals::Client === (32/35)
@@ -351,55 +342,55 @@ Stage start      :   0.000
 
     precomp lib/GSSDP/Roles/Signals/Client.pm6
     Stage start      :   0.000
-    Stage parse      :   2.455
+    Stage parse      :   2.415
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
-    Stage optimize   :   0.010
-    Stage mast       :   0.027
-    Stage mbc        :   0.010
-Stage parse      :   4.668
+    Stage optimize   :   0.016
+    Stage mast       :   0.024
+    Stage mbc        :   0.007
+Stage parse      :   4.881
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.003
-Stage mbc        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
 Stage moar       :   0.000
  === GSSDP::Roles::Signals::ResourceBrowser === (33/35)
 Stage start      :   0.000
 
     precomp lib/GSSDP/Roles/Signals/ResourceBrowser.pm6
     Stage start      :   0.000
-    Stage parse      :   2.536
+    Stage parse      :   2.826
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
-    Stage optimize   :   0.013
-    Stage mast       :   0.035
-    Stage mbc        :   0.016
-Stage parse      :   4.771
+    Stage optimize   :   0.014
+    Stage mast       :   0.040
+    Stage mbc        :   0.010
+Stage parse      :   5.378
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.003
-Stage mbc        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
 Stage moar       :   0.000
  === GSSDP::Client === (34/35)
 Stage start      :   0.000
 
     precomp lib/GSSDP/Client.pm6
     Stage start      :   0.000
-    Stage parse      :   4.132
+    Stage parse      :   4.576
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
-    Stage optimize   :   0.026
-    Stage mast       :   0.074
+    Stage optimize   :   0.034
+    Stage mast       :   0.075
     Stage mbc        :   0.015
 R: GLib::Roles::Object
-Stage parse      :   6.536
+Stage parse      :   7.489
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.003
-Stage mbc        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
 Stage moar       :   0.000
 R: GIO::Roles::Initable
 R: GSSDP::Roles::Signals::Client
@@ -408,22 +399,22 @@ Stage start      :   0.000
 
     precomp lib/GSSDP/ResourceBrowser.pm6
     Stage start      :   0.000
-    Stage parse      :   3.219
+    Stage parse      :   3.877
     Stage syntaxcheck:   0.000
     Stage ast        :   0.000
     Stage optimize   :   0.020
-    Stage mast       :   0.072
+    Stage mast       :   0.066
     Stage mbc        :   0.006
 R: GLib::Roles::Object
-Stage parse      :   5.666
+Stage parse      :   6.815
 Stage syntaxcheck:   0.000
 Stage ast        :   0.000
-Stage optimize   :   0.001
-Stage mast       :   0.003
-Stage mbc        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
 Stage moar       :   0.000
 R: GSSDP::Roles::Signals::ResourceBrowser
 
-real 116.62
-user 134.65
-sys 7.24
+real 115.41
+user 134.78
+sys 7.16
