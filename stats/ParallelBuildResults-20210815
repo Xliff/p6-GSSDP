@@ -1,0 +1,466 @@
+ === GIO::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   6.146
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.028
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GIO::Raw::Exports compile time: 7.66851123
+ === GLib::Raw::Exceptions === 
+Stage start      :   0.000
+Stage parse      :   6.519
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.038
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Exceptions compile time: 8.086106
+ === GIO::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   6.994
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GIO::Raw::Definitions compile time: 8.529481
+ === GLib::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   6.863
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.013
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Exports compile time: 8.4783002
+ === GIO::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   7.152
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.038
+Stage mast       :   0.009
+Stage mbc        :   0.020
+Stage moar       :   0.000
+
+GIO::Raw::Enums compile time: 8.6432919
+ === GLib::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   7.030
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.030
+Stage mast       :   0.040
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Definitions compile time: 8.6450647
+ === GLib::Raw::Object === 
+Stage start      :   0.000
+Stage parse      :   7.349
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GLib::Raw::Object compile time: 9.01196314
+ === GLib::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   7.577
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.018
+Stage mast       :   0.054
+Stage mbc        :   0.053
+Stage moar       :   0.000
+
+GLib::Raw::Enums compile time: 9.40092211
+ === GIO::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   8.035
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GIO::Raw::Structs compile time: 9.6246579
+ === GLib::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   7.802
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Subs compile time: 9.53859994
+ === GLib::Raw::Struct_Subs === 
+Stage start      :   0.000
+Stage parse      :   7.806
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Struct_Subs compile time: 9.56066995
+ === GLib::MainContext === 
+Stage start      :   0.000
+Stage parse      :   8.214
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.006
+Stage moar       :   0.000
+
+GLib::MainContext compile time: 9.642665
+ === GLib::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   8.053
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.016
+Stage moar       :   0.000
+
+GLib::Raw::Structs compile time: 9.62602419
+ === GIO::DBus::Raw::Types === 
+Stage start      :   0.000
+Stage parse      :   8.565
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GIO::DBus::Raw::Types compile time: 9.9408115
+ === GIO::Raw::Quarks === 
+Stage start      :   0.000
+Stage parse      :   8.481
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GIO::Raw::Quarks compile time: 9.84727603
+ === GIO::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   8.466
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.035
+Stage moar       :   0.000
+
+GIO::Raw::Subs compile time: 9.9833257
+ === GIO::Roles::Initable === 
+Stage start      :   0.000
+Stage parse      :   8.652
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GIO::Roles::Initable compile time: 10.38616755
+ === GIO::InetAddressMask === 
+Stage start      :   0.000
+Stage parse      :   9.041
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.008
+Stage moar       :   0.000
+
+GIO::InetAddressMask compile time: 10.55240653
+ === GLib::Roles::Object === 
+Stage start      :   0.000
+Stage parse      :   8.675
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GLib::Roles::Object compile time: 10.4313421
+ === GIO::InetAddress === 
+Stage start      :   0.000
+Stage parse      :   9.390
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.018
+Stage moar       :   0.000
+
+GIO::InetAddress compile time: 10.7262016
+ === GLib::Roles::Pointers === 
+Stage start      :   0.000
+Stage parse      :   3.194
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Roles::Pointers compile time: 5.05818982
+ === Method::Also === 
+Stage start      :   0.000
+Stage parse      :   2.683
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+Method::Also compile time: 4.25749274
+ === GLib::Value === 
+Stage start      :   0.000
+Stage parse      :   3.398
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GLib::Value compile time: 5.10249011
+ === GSSDP::Raw::Definitions === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.073
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.037
+    Stage mbc        :   0.006
+Stage parse      :   5.682
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::Definitions compile time: 7.1587881
+ === GSSDP::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   2.699
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::Exports compile time: 3.35124378
+ === GSSDP::Raw::ResourceBrowser === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/ResourceBrowser.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.005
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.031
+    Stage mbc        :   0.007
+Stage parse      :   5.801
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::ResourceBrowser compile time: 6.3994586
+ === GSSDP::Raw::ResourceGroup === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/ResourceGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.545
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.044
+    Stage mbc        :   0.012
+Stage parse      :   6.434
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::ResourceGroup compile time: 6.995456
+ === GSSDP::Raw::Client === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.037
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.035
+    Stage mast       :   0.049
+    Stage mbc        :   0.029
+Stage parse      :   7.036
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::Client compile time: 7.63877683
+ === GSSDP::Raw::Types === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.536
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.001
+    Stage mast       :   0.016
+    Stage mbc        :   0.003
+Stage parse      :   6.632
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.006
+Stage mast       :   0.013
+Stage mbc        :   0.006
+Stage moar       :   0.000
+
+GSSDP::Raw::Types compile time: 7.31261107
+ === GSSDP::Roles::Signals::Client === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Roles/Signals/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.805
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.028
+    Stage mbc        :   0.011
+Stage parse      :   5.639
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Roles::Signals::Client compile time: 6.19697766
+ === GSSDP::Roles::Signals::ResourceBrowser === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Roles/Signals/ResourceBrowser.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.939
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.046
+    Stage mbc        :   0.012
+Stage parse      :   5.903
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Roles::Signals::ResourceBrowser compile time: 6.47284941
+ === GSSDP::ResourceGroup === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/ResourceGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.002
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.054
+    Stage mbc        :   0.050
+Stage parse      :   7.014
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::ResourceGroup compile time: 7.57399782
+ === GSSDP::Client === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.312
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.080
+    Stage mbc        :   0.015
+Stage parse      :   7.189
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Client compile time: 7.7765875
+ === GSSDP::ResourceBrowser === 
+Stage start      :   0.000
+
+    precomp lib/GSSDP/ResourceBrowser.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.152
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.071
+    Stage mbc        :   0.006
+Stage parse      :   5.850
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::ResourceBrowser compile time: 6.35274189
+
+Total compile time: 46.94904653s
