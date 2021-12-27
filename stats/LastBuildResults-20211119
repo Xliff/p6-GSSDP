@@ -1,0 +1,47 @@
+Dependency Generation
+=====================
+real 0.54
+user 0.89
+sys 0.04
+ === GIO::DBus::Raw::Types === (1/35)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_n32 NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/.rakubrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::InetAddress === (2/35)
+Stage start      :   0.000
+Stage parse      :   1.445
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::InetAddressMask === (3/35)
+Stage start      :   0.000
+./p6gtkexec: line 63: 39364 Segmentation fault      (core dumped) ${EXEC} --stagestats ${EXTRAS} ${INCLUDES} "$@"
+ === GIO::Raw::Definitions === (4/35)
+Stage start      :   0.000
+./p6gtkexec: line 63: 39374 Segmentation fault      (core dumped) ${EXEC} --stagestats ${EXTRAS} ${INCLUDES} "$@"
+ === GIO::Raw::Enums === (5/35)
+Stage start      :   0.000
+Stage parse      :   0.970
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Exports === (6/35)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_iX NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/.rakubrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::Raw::Quarks === (7/35)
+Stage start      :   0.000
