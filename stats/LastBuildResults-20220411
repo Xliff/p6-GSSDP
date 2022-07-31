@@ -1,0 +1,422 @@
+Build started for: 
+Welcome to Rakudo™ v2022.03-192-g138ac465b.
+Implementing the Raku® Programming Language v6.d.
+Built on MoarVM version 2022.03-17-g794e1d589.
+ === GIO::DBus::Raw::Types === (1/35)
+Stage start      :   0.000
+Stage parse      :   1.224
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::InetAddress === (2/35)
+Stage start      :   0.000
+Stage parse      :   1.333
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.008
+Stage moar       :   0.000
+ === GIO::InetAddressMask === (3/35)
+Stage start      :   0.000
+Stage parse      :   1.511
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.007
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GIO::Raw::Definitions === (4/35)
+Stage start      :   0.000
+Stage parse      :   0.994
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Enums === (5/35)
+Stage start      :   0.000
+Stage parse      :   0.991
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::Raw::Exports === (6/35)
+Stage start      :   0.000
+Stage parse      :   0.850
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Quarks === (7/35)
+Stage start      :   0.000
+Stage parse      :   1.079
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Structs === (8/35)
+Stage start      :   0.000
+Stage parse      :   1.161
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::Raw::Subs === (9/35)
+Stage start      :   0.000
+Stage parse      :   1.205
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::Roles::Initable === (10/35)
+Stage start      :   0.000
+Stage parse      :   1.469
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.008
+Stage moar       :   0.000
+ === GLib::MainContext === (11/35)
+Stage start      :   0.000
+Stage parse      :   1.208
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GLib::Raw::Definitions === (12/35)
+Stage start      :   0.000
+Stage parse      :   0.979
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Enums === (13/35)
+Stage start      :   0.000
+Stage parse      :   1.076
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.006
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GLib::Raw::Exceptions === (14/35)
+Stage start      :   0.000
+Stage parse      :   0.808
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Exports === (15/35)
+Stage start      :   0.000
+Stage parse      :   0.838
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GLib::Raw::Object === (16/35)
+Stage start      :   0.000
+Stage parse      :   1.055
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GLib::Raw::Struct_Subs === (17/35)
+Stage start      :   0.000
+Stage parse      :   0.932
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Structs === (18/35)
+Stage start      :   0.000
+Stage parse      :   1.107
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Subs === (19/35)
+Stage start      :   0.000
+Stage parse      :   1.062
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::Object === (20/35)
+Stage start      :   0.000
+Stage parse      :   1.235
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GLib::Roles::Pointers === (21/35)
+Stage start      :   0.000
+Stage parse      :   0.945
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Value === (22/35)
+Stage start      :   0.000
+Stage parse      :   1.156
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === Method::Also === (23/35)
+Stage start      :   0.000
+Stage parse      :   0.846
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === NativeCall === (24/35)
+Stage start      :   0.000
+Stage parse      :   0.938
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Raw::Definitions === (25/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.222
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.025
+    Stage mbc        :   0.060
+Stage parse      :   2.255
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Raw::Client === (26/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.604
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.019
+    Stage mbc        :   0.076
+Stage parse      :   2.712
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GSSDP::Raw::ResourceBrowser === (27/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/ResourceBrowser.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.110
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.011
+    Stage mbc        :   0.010
+Stage parse      :   2.087
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Raw::ResourceGroup === (28/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/ResourceGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.316
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.013
+    Stage mbc        :   0.032
+Stage parse      :   2.373
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Raw::Exports === (29/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Exports.pm6
+    Stage start      :   0.000
+    Stage parse      :   0.110
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.002
+    Stage mast       :   0.003
+    Stage mbc        :   0.001
+Stage parse      :   1.023
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Raw::Types === (30/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.585
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.002
+    Stage mast       :   0.014
+    Stage mbc        :   0.004
+Stage parse      :   2.615
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.006
+Stage mast       :   0.008
+Stage mbc        :   0.023
+Stage moar       :   0.000
+ === GSSDP::ResourceGroup === (31/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/ResourceGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.696
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.050
+    Stage mbc        :   0.007
+Stage parse      :   2.842
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Roles::Signals::Client === (32/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Roles/Signals/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.173
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.020
+    Stage mbc        :   0.009
+Stage parse      :   2.241
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GSSDP::Roles::Signals::ResourceBrowser === (33/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Roles/Signals/ResourceBrowser.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.239
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.026
+    Stage mbc        :   0.018
+Stage parse      :   2.292
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.007
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GSSDP::Client === (34/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.220
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.035
+    Stage mast       :   0.053
+    Stage mbc        :   0.010
+Stage parse      :   3.416
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GSSDP::ResourceBrowser === (35/35)
+Stage start      :   0.000
+
+    precomp lib/GSSDP/ResourceBrowser.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.642
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.030
+    Stage mast       :   0.040
+    Stage mbc        :   0.006
+Stage parse      :   2.790
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+real 58.31
+user 68.61
+sys 5.74
