@@ -1,0 +1,240 @@
+
+Parallel build started for Raku 2022.06.60.ga.7.e.9.b.1938 on MoarVM 2022.06.2.gcc.49.dcf.93
+ === GSSDP::Raw::Exports (1/11) === 
+
+Stage start      :   0.000
+Stage parse      :   1.200
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::Exports compile time: 1.96668083
+ === GSSDP::Raw::Definitions (2/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.752
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.028
+    Stage mbc        :   0.017
+Stage parse      :   3.099
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::Definitions compile time: 3.79752218
+ === GSSDP::Raw::ResourceBrowser (3/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/ResourceBrowser.pm6
+    Stage start      :   0.000
+    
+        load    lib/GSSDP/Raw/Definitions.pm6
+    Stage parse      :   1.661
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.020
+    Stage mbc        :   0.020
+Stage parse      :   3.309
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::ResourceBrowser compile time: 4.00500429
+ === GSSDP::Raw::ResourceGroup (4/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/ResourceGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.755
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.015
+    Stage mbc        :   0.029
+Stage parse      :   3.458
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GSSDP::Raw::ResourceGroup compile time: 4.19814349
+ === GSSDP::Raw::Types (5/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.010
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.002
+    Stage mast       :   0.013
+    Stage mbc        :   0.004
+Stage parse      :   3.738
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.012
+Stage mast       :   0.017
+Stage mbc        :   0.010
+Stage moar       :   0.000
+
+GSSDP::Raw::Types compile time: 4.509216
+ === GSSDP::Raw::Client (6/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Raw/Client.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.182
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.020
+    Stage mbc        :   0.091
+Stage parse      :   3.913
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Raw::Client compile time: 4.61851802
+ === GSSDP::Roles::Signals::Client (7/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Roles/Signals/Client.pm6
+    Stage start      :   0.000
+    
+        load    lib/GSSDP/Raw/Types.pm6
+    Stage parse      :   2.643
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.021
+    Stage mbc        :   0.013
+Stage parse      :   4.337
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GSSDP::Roles::Signals::Client compile time: 5.1081129
+ === GSSDP::Roles::Signals::ResourceBrowser (8/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Roles/Signals/ResourceBrowser.pm6
+    Stage start      :   0.000
+    
+        load    lib/GSSDP/Raw/Types.pm6
+    Stage parse      :   2.844
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.029
+    Stage mbc        :   0.019
+Stage parse      :   4.634
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::Roles::Signals::ResourceBrowser compile time: 5.34009421
+ === GSSDP::ResourceGroup (9/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/ResourceGroup.pm6
+    Stage start      :   0.000
+    
+        load    lib/GSSDP/Raw/Types.pm6
+    Stage parse      :   2.966
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.040
+    Stage mbc        :   0.035
+Stage parse      :   4.793
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GSSDP::ResourceGroup compile time: 5.55765965
+ === GSSDP::Client (10/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/Client.pm6
+    Stage start      :   0.000
+    
+        load    lib/GSSDP/Raw/Types.pm6
+    Stage parse      :   3.583
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.031
+    Stage mast       :   0.064
+    Stage mbc        :   0.038
+Stage parse      :   5.528
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GSSDP::Client compile time: 6.17018419
+ === GSSDP::ResourceBrowser (11/11) === 
+
+Stage start      :   0.000
+
+    precomp lib/GSSDP/ResourceBrowser.pm6
+    Stage start      :   0.000
+    
+        load    lib/GSSDP/Raw/Types.pm6
+    
+        load    lib/GSSDP/Client.pm6
+    Stage parse      :   4.001
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.038
+    Stage mast       :   0.043
+    Stage mbc        :   0.005
+Stage parse      :   5.907
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GSSDP::ResourceBrowser compile time: 6.6033815
+
+Total compile time: 6.71386547s
