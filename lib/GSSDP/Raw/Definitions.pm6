@@ -9,7 +9,7 @@ use GLib::Roles::Pointers;
 unit package GSSDP::Raw::Definitions;
 
 # Forced recompile constant
-constant forced = 13;
+constant forced = 207;
 
 # GSSDP
 constant gssdp               is export = 'gssdp-1.2',v0;
